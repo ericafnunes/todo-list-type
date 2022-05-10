@@ -2,6 +2,9 @@ import { useState } from "react";
 import TodoTask from "./components/TodoTask/TodoTask";
 import { ITask } from "./Interface";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './styles/styles.css';
 
 
@@ -14,11 +17,18 @@ function App() {
 
 
 	function addTask(): void{
-		const idRandom = (num: number) => Math.floor(Math.random() * num)
 
-		const newTask = { id: idRandom(999999999999999), nameTask: task}
+		if(task === ""){
+			toast.error("Digite uma tarefa!")
+		}else{
+			const idRandom = (num: number) => Math.floor(Math.random() * num)
 
-		setTodoList([...todoList, newTask])
+			const newTask = { id: idRandom(999999999999999), nameTask: task}
+	
+			setTodoList([...todoList, newTask])
+	
+			toast.success("Tarefa cadastrada com sucesso!")
+		}
 	}
 
 	function deleteTask(DeleteTaskById: number): void{
@@ -28,9 +38,14 @@ function App() {
 	return (
 		<div className="App">
 
+			<ToastContainer
+			 autoClose={2500}
+			 pauseOnHover={false}
+			/>
+
 			<header>
 
-				<h2>Lists</h2>
+				<h2>Lista de Tarefas</h2>
 
 				<input
 					type="text" autoComplete="off" 
