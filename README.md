@@ -1,7 +1,6 @@
-### :computer: TODO - LISTA DE TAREFAS 
+### :computer: TODO
 
-API onde o usuário faz uma consulta de um CEP e o armazena no localStorage, enviando a requisição para a API viacep
-apenas se for um CEP não informado anteriormente.
+Lista de tarefas
 
 ### :rocket: Tecnologias utilizadas:
 
