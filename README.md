@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+### :computer: TODO - LISTA DE TAREFAS 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+API onde o usuário faz uma consulta de um CEP e o armazena no localStorage, enviando a requisição para a API viacep
+apenas se for um CEP não informado anteriormente.
 
-## Available Scripts
+### :rocket: Tecnologias utilizadas:
 
-In the project directory, you can run:
+- HTML
+- CSS
+- React
+- Typescript
 
-### `yarn start`
+<div style="display: inline_block"><br>
+  <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+  <img  align="center" alt="nodejs" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+ <img  align="center" alt="vscode" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg" />
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### :arrow_down: DEPLOY:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### :floppy_disk: Download - Para clonar o repositório
 
-### `yarn build`
+#### com a chave ssh:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### 1. Abra o seu terminal e clone o código com o comando
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    git@github.com:ericafnunes/todo-list-type.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### com o protocolo https:
 
-### `yarn eject`
+##### 2. Abra o seu terminal e clone o código com o comando
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   https://github.com/ericafnunes/todo-list-type.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### :wrench: Para rodar:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+     npm start
