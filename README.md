@@ -19,6 +19,8 @@ Lista de tarefas
 
 ### :arrow_down: DEPLOY:
 
+<a src="https://flashtasks.netlify.app/">https://flashtasks.netlify.app/</a>
+
 
 
 ### :floppy_disk: Download - Para clonar o repositório
