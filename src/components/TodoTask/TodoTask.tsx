@@ -1,12 +1,19 @@
 
-import './styles.css'
+import { ITask } from '../../Interface';
+import './styles.css';
 
-function TodoTask() {
+interface TaskProps {
+    task: ITask
+}
+
+
+
+function TodoTask({task}: TaskProps) {
 	
 	return (
 		<div className="card">
 			<div>
-                <p>Estudar typeScript</p>
+                <p>{task.nameTask}</p>
             </div>
 
             <div className="line2" >

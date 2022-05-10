@@ -1,13 +1,11 @@
 import { useState } from "react";
 import TodoTask from "./components/TodoTask/TodoTask";
+import { ITask } from "./Interface";
 
-import './styles/styles.css'
+import './styles/styles.css';
 
 
-interface ITask {
-	id: number,
-	nameTask: string,
-}
+
 
 function App() {
 
@@ -18,7 +16,9 @@ function App() {
 	function addTask(){
 		const idRandom = (num: number) => Math.floor(Math.random() * num)
 
-		console.log(idRandom(10))
+		const newTask = { id: idRandom(999999999999999), nameTask: task}
+
+		setTodoList([...todoList, newTask])
 	}
 
 	return (
@@ -42,8 +42,9 @@ function App() {
 			
 			<div className="line"></div>
 
-			<TodoTask />
-			
+			{todoList.map((task, key) =>(
+				<TodoTask key={key} task={task}/>
+			))}
 		</div>
 	);
 }
