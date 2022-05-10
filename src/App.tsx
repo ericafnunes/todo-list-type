@@ -13,12 +13,16 @@ function App() {
 	const [todoList, setTodoList] = useState<ITask[]>([])
 
 
-	function addTask(){
+	function addTask(): void{
 		const idRandom = (num: number) => Math.floor(Math.random() * num)
 
 		const newTask = { id: idRandom(999999999999999), nameTask: task}
 
 		setTodoList([...todoList, newTask])
+	}
+
+	function deleteTask(DeleteTaskById: number): void{
+		setTodoList(todoList.filter((taskName) => taskName.id !== DeleteTaskById))
 	}
 
 	return (
@@ -43,7 +47,7 @@ function App() {
 			<div className="line"></div>
 
 			{todoList.map((task, key) =>(
-				<TodoTask key={key} task={task}/>
+				<TodoTask key={key} task={task} deleteTask={deleteTask}/>
 			))}
 		</div>
 	);

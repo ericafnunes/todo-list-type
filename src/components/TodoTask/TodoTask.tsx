@@ -3,12 +3,13 @@ import { ITask } from '../../Interface';
 import './styles.css';
 
 interface TaskProps {
-    task: ITask
+    task: ITask,
+    deleteTask(DeleteTaskById: number): void
 }
 
 
 
-function TodoTask({task}: TaskProps) {
+function TodoTask({task, deleteTask}: TaskProps) {
 	
 	return (
 		<div className="card">
@@ -17,7 +18,7 @@ function TodoTask({task}: TaskProps) {
             </div>
 
             <div className="line2" >
-            <span className="btn-card">X</span>
+            <span className="btn-card" onClick={() => deleteTask(task.id)}>X</span>
             </div>
 		</div>
 	);
