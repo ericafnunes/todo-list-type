@@ -34,7 +34,7 @@ apenas se for um CEP não informado anteriormente.
 
 ##### 2. Abra o seu terminal e clone o código com o comando
 
-   https://github.com/ericafnunes/todo-list-type.git
+    https://github.com/ericafnunes/todo-list-type.git
 
 #### :wrench: Para rodar:
 
