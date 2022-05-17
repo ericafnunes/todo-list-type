@@ -49,14 +49,14 @@ function App() {
 
 				<input
 					type="text" autoComplete="off" 
-					placeholder="Escrever task..." 
+					placeholder="Escrever tarefa..." 
 					name="task"
 					className="input"
 					value={task}
 					onChange={(event) => setTask(event.target.value)}
 				/>
 
-				<button type="submit" onClick={addTask} className="btn-header">Adicionar Task</button>
+				<button type="submit" onClick={addTask} className="btn-header">Adicionar Tarefa</button>
 			</header>
 			
 			<div className="line"></div>
