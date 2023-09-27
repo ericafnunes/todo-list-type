@@ -2,70 +2,62 @@ import { useState } from "react";
 import TodoTask from "./components/TodoTask/TodoTask";
 import { ITask } from "./Interface";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import './styles/styles.css';
-
-
-
+import "./styles/styles.css";
 
 function App() {
+  const [task, setTask] = useState<string>("");
+  const [todoList, setTodoList] = useState<ITask[]>([]);
 
-	const [task, setTask] = useState<string>("")
-	const [todoList, setTodoList] = useState<ITask[]>([])
+  function addTask(): void {
+    if (task === "") {
+      toast.error("Digite uma tarefa!");
+    } else {
+      const idRandom = (num: number) => Math.floor(Math.random() * num);
 
+      const newTask = { id: idRandom(999999999999999), nameTask: task };
 
-	function addTask(): void{
+      setTodoList([...todoList, newTask]);
 
-		if(task === ""){
-			toast.error("Digite uma tarefa!")
-		}else{
-			const idRandom = (num: number) => Math.floor(Math.random() * num)
+      toast.success("Tarefa cadastrada com sucesso!");
+    }
+  }
 
-			const newTask = { id: idRandom(999999999999999), nameTask: task}
-	
-			setTodoList([...todoList, newTask])
-	
-			toast.success("Tarefa cadastrada com sucesso!")
-		}
-	}
+  function deleteTask(DeleteTaskById: number): void {
+    setTodoList(todoList.filter((taskName) => taskName.id !== DeleteTaskById));
+  }
 
-	function deleteTask(DeleteTaskById: number): void{
-		setTodoList(todoList.filter((taskName) => taskName.id !== DeleteTaskById))
-	}
+  return (
+    <div className="App">
+      <ToastContainer autoClose={2500} pauseOnHover={false} />
 
-	return (
-		<div className="App">
+      <header>
+        <h2>Lista</h2>
 
-			<ToastContainer
-			 autoClose={2500}
-			 pauseOnHover={false}
-			/>
+        <input
+          type="text"
+          autoComplete="off"
+          placeholder="Escrever tarefa..."
+          name="task"
+          className="input"
+          value={task}
+          onChange={(event) => setTask(event.target.value)}
+        />
 
-			<header>
+        <button type="submit" onClick={addTask} className="btn-header">
+          Adicionar Tarefa
+        </button>
+      </header>
 
-				<h2>Lista de Tarefas</h2>
+      <div className="line"></div>
 
-				<input
-					type="text" autoComplete="off" 
-					placeholder="Escrever tarefa..." 
-					name="task"
-					className="input"
-					value={task}
-					onChange={(event) => setTask(event.target.value)}
-				/>
-
-				<button type="submit" onClick={addTask} className="btn-header">Adicionar Tarefa</button>
-			</header>
-			
-			<div className="line"></div>
-
-			{todoList.map((task, key) =>(
-				<TodoTask key={key} task={task} deleteTask={deleteTask}/>
-			))}
-		</div>
-	);
+      {todoList.map((task, key) => (
+        <TodoTask key={key} task={task} deleteTask={deleteTask} />
+      ))}
+    </div>
+  );
 }
 
 export default App;
